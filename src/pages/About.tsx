@@ -81,13 +81,6 @@ const About = () => {
                         The 2nd place finish wasn't the end — it was the beginning. What the team built under pressure in a hackathon became the proof of concept that InspoAI needed. The core idea has since evolved into a full platform with multi-source visual search, moodboard creation, AI design feedback, and smart filtering tools.
                     </p>
 
-                    <div className="bg-card border border-border rounded-xl p-8 text-center mt-12 shadow-sm">
-                        <h3 className="text-xl font-bold text-foreground mb-4">Try it today</h3>
-                        <a href="https://app.inspoai.live" target="_blank" rel="noopener noreferrer" className="inline-block bg-black hover:inspo-gradient-bg text-white font-semibold px-6 py-3 rounded-pill transition-all duration-300">
-                            app.inspoai.live
-                        </a>
-                    </div>
-
                     <div className="mt-16 text-center">
                         <p className="text-sm font-semibold tracking-widest uppercase text-muted-foreground">One Line to Remember</p>
                         <p className="text-2xl font-display font-medium text-foreground mt-2">
