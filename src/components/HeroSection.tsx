@@ -109,7 +109,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-6 text-[15px] sm:text-[16px] text-[#4A5568] max-w-[700px] mx-auto leading-relaxed font-normal"
         >
-          Find millions of web designs,icons , UI screens, and creatives in one place. Save to moodboards. Collaborate in live. Scan any URL for its brand DNA. Audit designs with AI. Creator Studio (Prompt to website based on your moodboard) coming soon!
+          Search icons, UI screens, and web designs. Save them to moodboards. Collaborate in real time. Scan any URL to extract its entire brand DNA. Audit designs against your guidelines. And soon, generate new designs straight from your references.
         </motion.p>
 
         {/* Floating Search UI */}
