@@ -11,6 +11,7 @@ import MarketingTeams from "./pages/use-cases/MarketingTeams";
 import Agencies from "./pages/use-cases/Agencies";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/solutions/creative-collaboration" element={<CreativeCollaboration />} />
           <Route path="/solutions/competitive-analysis" element={<CompetitiveAnalysis />} />
           <Route path="/solutions/ai-design-generation" element={<AIDesignGeneration />} />
+          <Route path="/about" element={<About />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="*" element={<NotFound />} />
