@@ -51,9 +51,9 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Inspo AI | Design Inspiration, Moodboard & Mobbin alternative"
-        description="Mobbin alternative | Search millions of designs, build moodboards, audit brands, and scan competitors. All from one AI-powered workspace."
-        keywords="design inspiration, moodboard builder, UI/UX, AI design audit, brand compliance, Mobbin alternative"
+        title="Inspo AI | Best Tool for Design Inspiration & Mobbin Alternative"
+        description="The ultimate AI design inspiration tool and Mobbin alternative. Search UI designs, build collaborative moodboards online, audit brands for compliance, and generate AI websites from text prompts in a single workspace."
+        keywords="AI design inspiration tool, moodboard builder online, AI design audit tool, competitor website analysis tool, AI web design generator, Mobbin alternative, Pinterest alternative for designers, automated brand audit, brand DNA scanner"
         schemaMarkup={schemaMarkup}
       />
       <DotBackground />
