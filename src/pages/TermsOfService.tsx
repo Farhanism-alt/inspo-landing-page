@@ -5,7 +5,7 @@ const TermsOfService = () => {
     return (
         <div className="min-h-screen flex flex-col pt-20" style={{ fontFamily: 'NeueHaas, "Neue Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif' }}>
             <Navbar />
-            <main className="flex-1 py-16 md:py-24 max-w-4xl mx-auto w-full px-4 sm:px-6">
+            <main className="flex-1 py-16 md:py-24 max-w-4xl mx-auto w-full px-4 sm:px-6 legal-content">
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-[-0.03em] mb-8 text-foreground">
                     TERMS AND CONDITIONS
                 </h1>
