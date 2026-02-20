@@ -44,6 +44,8 @@ const footerCols = [
 
 import LogoInspo from "@/assets/LogoInspo.svg";
 
+import { Twitter, Linkedin } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-card">
@@ -76,25 +78,40 @@ const Footer = () => {
             </div>
           )}
         </div>
-        <div className="border-t border-border mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-xs">Copyright 2026 Inspo AI. All rights reserved.</p>
-          <div className="flex gap-5">
-            {["Twitter", "LinkedIn", "Instagram"].map((s) =>
-              <a
-                key={s}
-                className="text-muted-foreground text-xs hover:text-foreground transition-colors duration-200"
-                href={s === "LinkedIn" ? "https://www.linkedin.com/company/inspo-ai/" : "https://x.com/inspo_ai_"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {s}
-              </a>
-            )}
+
+        <div className="border-t border-border mt-14 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
+          <p className="text-muted-foreground text-xs text-center md:text-left md:w-1/3">
+            Copyright 2026 Inspo AI. All rights reserved.
+          </p>
+
+          <p className="text-muted-foreground text-sm font-medium text-center md:w-1/3">
+            Made from Greater Chennai, for the world ❤️🇮🇳
+          </p>
+
+          <div className="flex gap-4 md:w-1/3 justify-center md:justify-end">
+            <a
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200 p-2 bg-muted/30 border border-border/50 rounded-full hover:bg-muted/80"
+              href="https://x.com/inspo_ai_"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <Twitter size={16} fill="currentColor" />
+            </a>
+            <a
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200 p-2 bg-muted/30 border border-border/50 rounded-full hover:bg-muted/80"
+              href="https://www.linkedin.com/company/inspo-ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={16} fill="currentColor" />
+            </a>
           </div>
         </div>
       </div>
-    </footer>);
-
+    </footer>
+  );
 };
 
 export default Footer;
