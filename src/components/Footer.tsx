@@ -64,11 +64,11 @@ const Footer = () => {
                 {col.links.map((link) =>
                   <li key={link.label}>
                     {link.href.startsWith("/") ? (
-                      <Link to={link.href} className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 after:h-[1px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">
+                      <Link to={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 after:h-[1px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">
                         {link.label}
                       </Link>
                     ) : (
-                      <a href={link.href} className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 after:h-[1px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">
+                      <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 after:h-[1px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">
                         {link.label}
                       </a>
                     )}

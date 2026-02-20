@@ -80,6 +80,8 @@ const Navbar = () => {
                         <a
                           key={subLink.label}
                           href={subLink.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="block px-4 py-2.5 text-xs font-semibold text-[#0A1A2F]/70 hover:text-black hover:bg-[#F5F5F7] rounded-xl transition-all"
                         >
                           {subLink.label}
@@ -144,6 +146,8 @@ const Navbar = () => {
                                 <a
                                   key={subLink.label}
                                   href={subLink.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
                                   className="text-[15px] font-medium text-muted-foreground hover:text-foreground py-2.5"
                                   onClick={() => setMobileOpen(false)}
                                 >
