@@ -1,20 +1,47 @@
+import { Link } from "react-router-dom";
+
 const footerCols = [
-{
-  title: "Product",
-  links: ["AI Design Search", "Moodboard Builder", "AI Design Audit", "Brand Scanner", "Creator Studio", "Live Collaboration"]
-},
-{
-  title: "Use Cases",
-  links: ["For UI/UX Designers", "For Brand Teams", "For Marketing Teams", "For Agencies"]
-},
-{
-  title: "Solutions",
-  links: ["Design Inspiration", "Brand Intelligence", "Creative Collaboration", "Competitive Analysis", "AI Design Generation"]
-},
-{
-  title: "Company",
-  links: ["About", "Blog", "Changelog", "Contact", "Privacy Policy", "Terms of Service"]
-}];
+  {
+    title: "Product",
+    links: [
+      { label: "AI Design Search", href: "#" },
+      { label: "Moodboard Builder", href: "#" },
+      { label: "AI Design Audit", href: "#" },
+      { label: "Brand Scanner", href: "#" },
+      { label: "Creator Studio", href: "#" },
+      { label: "Live Collaboration", href: "#" }
+    ]
+  },
+  {
+    title: "Use Cases",
+    links: [
+      { label: "For UI/UX Designers", href: "/use-cases/ui-ux-designers" },
+      { label: "For Brand Teams", href: "/use-cases/brand-teams" },
+      { label: "For Marketing Teams", href: "/use-cases/marketing-teams" },
+      { label: "For Agencies", href: "/use-cases/agencies" }
+    ]
+  },
+  {
+    title: "Solutions",
+    links: [
+      { label: "Design Inspiration", href: "/solutions/design-inspiration" },
+      { label: "Brand Intelligence", href: "/solutions/brand-intelligence" },
+      { label: "Creative Collaboration", href: "/solutions/creative-collaboration" },
+      { label: "Competitive Analysis", href: "/solutions/competitive-analysis" },
+      { label: "AI Design Generation", href: "/solutions/ai-design-generation" }
+    ]
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "#" },
+      { label: "Blog", href: "#" },
+      { label: "Changelog", href: "#" },
+      { label: "Contact", href: "#" },
+      { label: "Privacy Policy", href: "#" },
+      { label: "Terms of Service", href: "#" }
+    ]
+  }];
 
 
 import LogoInspo from "@/assets/LogoInspo.svg";
@@ -31,16 +58,22 @@ const Footer = () => {
             </p>
           </div>
           {footerCols.map((col) =>
-          <div key={col.title}>
+            <div key={col.title}>
               <h4 className="font-semibold text-foreground text-sm mb-5">{col.title}</h4>
               <ul className="space-y-3">
                 {col.links.map((link) =>
-              <li key={link}>
-                    <a href="#" className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 after:h-[1px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">
-                      {link}
-                    </a>
+                  <li key={link.label}>
+                    {link.href.startsWith("/") ? (
+                      <Link to={link.href} className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 after:h-[1px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a href={link.href} className="text-muted-foreground text-sm hover:text-foreground transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-0 after:h-[1px] after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">
+                        {link.label}
+                      </a>
+                    )}
                   </li>
-              )}
+                )}
               </ul>
             </div>
           )}
@@ -49,7 +82,7 @@ const Footer = () => {
           <p className="text-muted-foreground text-xs">Copyright 2026 Inspo AI. All rights reserved.</p>
           <div className="flex gap-5">
             {["Twitter", "LinkedIn", "Instagram"].map((s) =>
-            <a key={s} className="text-muted-foreground text-xs hover:text-foreground transition-colors duration-200" href="https://x.com/inspo_ai_">
+              <a key={s} className="text-muted-foreground text-xs hover:text-foreground transition-colors duration-200" href="https://x.com/inspo_ai_">
                 {s}
               </a>
             )}
