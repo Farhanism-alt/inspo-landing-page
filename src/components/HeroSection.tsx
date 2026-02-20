@@ -48,7 +48,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden py-24 px-4 sm:px-6">
+    <section className="relative min-h-[105vh] flex flex-col items-center justify-center overflow-hidden py-24 px-4 sm:px-6">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -64,7 +64,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]" />
       </div>
 
-      <div className="container-narrow relative z-10 text-center">
+      <div className="container-narrow relative z-10 text-center mt-[10vh]">
         {/* Animated heading */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
