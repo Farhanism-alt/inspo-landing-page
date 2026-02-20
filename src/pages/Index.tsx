@@ -11,10 +11,41 @@ import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Index = () => {
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Inspo AI",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Mobbin alternative to search millions of designs, build moodboards, audit brands, and scan competitors from one AI-powered workspace."
+      },
+      {
+        "@type": "Organization",
+        "name": "Inspo AI",
+        "url": "https://inspoai.io",
+        "logo": "https://inspoai.io/assets/LogoInspo.svg"
+      }
+    ]
+  };
+
   return (
     <>
+      <SEO
+        title="Inspo AI | Design Inspiration, Moodboard & Mobbin alternative"
+        description="Mobbin alternative | Search millions of designs, build moodboards, audit brands, and scan competitors. All from one AI-powered workspace."
+        keywords="design inspiration, moodboard builder, UI/UX, AI design audit, brand compliance, Mobbin alternative"
+        schemaMarkup={schemaMarkup}
+      />
       <DotBackground />
       <div className="min-h-screen relative z-10">
         <Navbar />

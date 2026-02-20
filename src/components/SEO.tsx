@@ -4,9 +4,10 @@ interface SEOProps {
     title: string;
     description: string;
     keywords?: string;
+    schemaMarkup?: Record<string, any>;
 }
 
-const SEO = ({ title, description, keywords }: SEOProps) => {
+const SEO = ({ title, description, keywords, schemaMarkup }: SEOProps) => {
     useEffect(() => {
         document.title = title;
 
@@ -45,7 +46,22 @@ const SEO = ({ title, description, keywords }: SEOProps) => {
         const twitterDescription = document.querySelector('meta[name="twitter:description"]');
         if (twitterDescription) twitterDescription.setAttribute("content", description);
 
-    }, [title, description, keywords]);
+        // Handle JSON-LD Schema
+        let scriptTag: HTMLScriptElement | null = null;
+        if (schemaMarkup) {
+            scriptTag = document.createElement("script");
+            scriptTag.setAttribute("type", "application/ld+json");
+            scriptTag.textContent = JSON.stringify(schemaMarkup);
+            document.head.appendChild(scriptTag);
+        }
+
+        // Cleanup function to prevent duplicate scripts on route change
+        return () => {
+            if (scriptTag) {
+                document.head.removeChild(scriptTag);
+            }
+        };
+    }, [title, description, keywords, schemaMarkup]);
 
     return null;
 };
