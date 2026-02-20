@@ -30,6 +30,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -79,8 +80,6 @@ const Navbar = () => {
                         <a
                           key={subLink.label}
                           href={subLink.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
                           className="block px-4 py-2.5 text-xs font-semibold text-[#0A1A2F]/70 hover:text-black hover:bg-[#F5F5F7] rounded-xl transition-all"
                         >
                           {subLink.label}
@@ -122,29 +121,44 @@ const Navbar = () => {
           >
             <div className="px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
-                <div key={link.label} className="flex flex-col">
-                  <div className="text-sm font-bold text-black py-3 uppercase tracking-wider opacity-30 mt-2 px-2">
-                    {link.label}
-                  </div>
+                <div key={link.label} className="flex flex-col border-b border-border/50 last:border-0">
                   {link.hasDropdown ? (
-                    <div className="flex flex-col gap-1 pl-2">
-                      {link.dropdownItems?.map((subLink) => (
-                        <a
-                          key={subLink.label}
-                          href={subLink.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm font-medium text-muted-foreground hover:text-foreground py-2"
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {subLink.label}
-                        </a>
-                      ))}
-                    </div>
+                    <>
+                      <button
+                        className="flex items-center justify-between text-sm font-bold text-foreground py-4 uppercase tracking-wider px-2 w-full text-left"
+                        onClick={() => setExpandedMobileMenu(expandedMobileMenu === link.label ? null : link.label)}
+                      >
+                        <span className="opacity-80">{link.label}</span>
+                        <ChevronDown size={18} className={`transition-transform duration-300 opacity-50 ${expandedMobileMenu === link.label ? 'rotate-180' : ''}`} />
+                      </button>
+                      <AnimatePresence>
+                        {expandedMobileMenu === link.label && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="flex flex-col gap-1 pl-4 pb-4">
+                              {link.dropdownItems?.map((subLink) => (
+                                <a
+                                  key={subLink.label}
+                                  href={subLink.href}
+                                  className="text-[15px] font-medium text-muted-foreground hover:text-foreground py-2.5"
+                                  onClick={() => setMobileOpen(false)}
+                                >
+                                  {subLink.label}
+                                </a>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
                   ) : (
                     <a
                       href={link.href}
-                      className="text-sm font-medium text-muted-foreground hover:text-foreground py-2 px-2"
+                      className="text-sm font-bold text-foreground py-4 uppercase tracking-wider opacity-80 hover:opacity-100 px-2 block w-full"
                       onClick={() => setMobileOpen(false)}
                     >
                       {link.label}
