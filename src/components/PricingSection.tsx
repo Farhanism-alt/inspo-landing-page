@@ -52,7 +52,7 @@ const plans = [
       "High priority support",
     ],
     cta: "Upgrade",
-    href: "https://app.inspoai.live",
+    href: "https://app.inspoai.io",
     highlighted: true,
   },
   {
@@ -92,8 +92,8 @@ const PricingSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
               className={`rounded-[24px] border p-8 flex flex-col relative transition-all duration-300 hover:-translate-y-1 ${p.highlighted
-                  ? "bg-card shadow-inspo-lg inspo-gradient-border hover:shadow-[0_16px_48px_rgba(0,140,255,0.12)]"
-                  : "bg-card border-border shadow-inspo hover:shadow-inspo-lg"
+                ? "bg-card shadow-inspo-lg inspo-gradient-border hover:shadow-[0_16px_48px_rgba(0,140,255,0.12)]"
+                : "bg-card border-border shadow-inspo hover:shadow-inspo-lg"
                 }`}
             >
               {p.badge && (
