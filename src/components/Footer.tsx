@@ -35,11 +35,9 @@ const footerCols = [
     title: "Company",
     links: [
       { label: "About", href: "#" },
-      { label: "Blog", href: "#" },
-      { label: "Changelog", href: "#" },
-      { label: "Contact", href: "#" },
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" }
+      { label: "Contact", href: "mailto:contact@inspoai.io" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms-of-service" }
     ]
   }];
 
@@ -82,7 +80,13 @@ const Footer = () => {
           <p className="text-muted-foreground text-xs">Copyright 2026 Inspo AI. All rights reserved.</p>
           <div className="flex gap-5">
             {["Twitter", "LinkedIn", "Instagram"].map((s) =>
-              <a key={s} className="text-muted-foreground text-xs hover:text-foreground transition-colors duration-200" href="https://x.com/inspo_ai_">
+              <a
+                key={s}
+                className="text-muted-foreground text-xs hover:text-foreground transition-colors duration-200"
+                href={s === "LinkedIn" ? "https://www.linkedin.com/company/inspo-ai/" : "https://x.com/inspo_ai_"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {s}
               </a>
             )}
