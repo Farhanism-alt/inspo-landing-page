@@ -23,10 +23,16 @@ const LogoBar = () => {
         {/* Right gradient */}
         <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '150px', background: 'linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%)', zIndex: 2, pointerEvents: 'none' }}></div>
 
+        <div className="container-narrow px-4 relative z-10 mb-8 mt-2">
+          <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
+            Used by creative teams at
+          </p>
+        </div>
+
         <div className="custom-marquee" style={{ display: 'flex', width: 'fit-content', animation: 'scroll 30s linear infinite' }}>
 
           {/* First set of logos */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '80px', padding: '0 40px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '80px', padding: '0 40px', flexShrink: 0 }}>
             <img src="https://framerusercontent.com/images/GqSEdGrdx37owMZSEEsbX07iyOI.svg?width=68&height=24" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
             <img src="https://framerusercontent.com/images/nCnW6ImWhJDVVjzHjzeZRLBXk.png?width=506&height=121" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
             <img src="https://framerusercontent.com/images/kHiIMv1iAswDAYatzzYuPIIM.png?width=478&height=126" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
@@ -38,7 +44,7 @@ const LogoBar = () => {
           </div>
 
           {/* Second set of logos */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '80px', padding: '0 40px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '80px', padding: '0 40px', flexShrink: 0 }}>
             <img src="https://framerusercontent.com/images/GqSEdGrdx37owMZSEEsbX07iyOI.svg?width=68&height=24" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
             <img src="https://framerusercontent.com/images/nCnW6ImWhJDVVjzHjzeZRLBXk.png?width=506&height=121" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
             <img src="https://framerusercontent.com/images/kHiIMv1iAswDAYatzzYuPIIM.png?width=478&height=126" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
@@ -50,7 +56,7 @@ const LogoBar = () => {
           </div>
 
           {/* Third set of logos */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '80px', padding: '0 40px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '80px', padding: '0 40px', flexShrink: 0 }}>
             <img src="https://framerusercontent.com/images/GqSEdGrdx37owMZSEEsbX07iyOI.svg?width=68&height=24" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
             <img src="https://framerusercontent.com/images/nCnW6ImWhJDVVjzHjzeZRLBXk.png?width=506&height=121" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
             <img src="https://framerusercontent.com/images/kHiIMv1iAswDAYatzzYuPIIM.png?width=478&height=126" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
